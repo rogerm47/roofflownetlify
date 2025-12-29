@@ -366,5 +366,39 @@
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<style>
+  /* Tutaj masz pełną kontrolę nad wyglądem poprzez zmienne CSS */
+  :root {
+    --n8n-chat-primary-color: #0052ff; /* Główny kolor RoofFlow AI */
+    --n8n-chat-primary-hover-color: #003db3;
+    --n8n-chat-background-color: #ffffff;
+    --n8n-chat-font-family: 'Inter', sans-serif;
+  }
+
+  /* Dodatkowa kontrola nad oknem czatu */
+  .n8n-chat-window {
+    border-radius: 12px !important;
+    bottom: 80px !important; /* Odległość od dołu */
+  }
+</style>
+
+<script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+  createChat({
+    webhookUrl: 'https://primary-production-58a3.up.railway.app/webhook/f30fd248-bb26-4960-bb54-35cc58484fca/chat',
+    webhookConfig: {
+      method: 'POST'
+    },
+    showWelcomeMsg: true,
+    welcomeMsg: 'Welcome to RoofFlow AI! How can we help automate your home service business today?',
+    title: 'RoofFlow Assistant',
+    subtitle: 'AI Solutions for UK Home Services',
+    mainColor: '#0052ff',
+    backgroundColor: '#ffffff',
+  });
+</script>
 </body>
 </html>
+
