@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -41,20 +40,66 @@
     </script>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         body { font-family: 'Inter', sans-serif; }
         .hero-bg {
-            /* Darkened overlay on a roofing/construction background */
             background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1632759145351-1d592919f522?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
         }
         .smooth-scroll { scroll-behavior: smooth; }
+
+        /* CUSTOM CHAT STYLING - NEW BRAND COLORS */
+        :root {
+            --chat--color-primary: #e74266;
+            --chat--color-primary-shade-50: #db4061;
+            --chat--color-primary-shade-100: #cf3c5c;
+            --chat--color-secondary: #20b69e;
+            --chat--color-secondary-shade-50: #1ca08a;
+            --chat--color-white: #ffffff;
+            --chat--color-light: #f2f4f8;
+            --chat--color-light-shade-50: #e6e9f1;
+            --chat--color-light-shade-100: #c2c5cc;
+            --chat--color-medium: #d2d4d9;
+            --chat--color-dark: #101330;
+            --chat--color-disabled: #d2d4d9;
+            --chat--color-typing: #404040;
+
+            --chat--spacing: 1rem;
+            --chat--border-radius: 0.5rem;
+            --chat--transition-duration: 0.15s;
+            --chat--font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+
+            --chat--window--width: 400px;
+            --chat--window--height: 600px;
+            --chat--window--border: 1px solid var(--chat--color-light-shade-50);
+            --chat--window--border-radius: 16px;
+
+            --chat--header--background: var(--chat--color-dark);
+            --chat--header--color: var(--chat--color-light);
+            --chat--heading--font-size: 1.5rem;
+            --chat--subtitle--line-height: 1.8;
+
+            --chat--message--bot--background: var(--chat--color-white);
+            --chat--message--bot--color: var(--chat--color-dark);
+            --chat--message--user--background: var(--chat--color-secondary);
+            --chat--message--user--color: var(--chat--color-white);
+
+            --chat--toggle--background: var(--chat--color-primary);
+            --chat--toggle--hover--background: var(--chat--color-primary-shade-50);
+
+            --chat--body--background: var(--chat--color-light);
+            --chat--footer--background: var(--chat--color-light);
+        }
+
+        .n8n-chat-footer-branding { display: none !important; }
+        
+        .chat-message {
+            max-width: 75% !important;
+        }
     </style>
 </head>
 <body class="text-gray-800 antialiased smooth-scroll">
@@ -115,203 +160,16 @@
         </div>
     </section>
 
-    <section class="py-20 bg-slate-50">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <span class="text-blue-600 font-bold uppercase tracking-wide">The Solution</span>
-                <h2 class="text-3xl md:text-5xl font-bold mt-2 text-slate-900">Introducing "RoofFlow AI"</h2>
-                <p class="text-xl text-gray-600 mt-4">Your 24/7 AI Sales Assistant That Never Sleeps</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mobile phone showing instant lead notifications" class="rounded-xl shadow-2xl transform hover:scale-105 transition duration-500">
-                </div>
-                <div class="space-y-6">
-                    <p class="text-lg text-gray-700">
-                        RoofFlow AI is not "another piece of software" you have to learn. 
-                        It's a <strong>Done-For-You AI system</strong> that we install directly into your business.
-                    </p>
-                    
-                    <div class="space-y-4">
-                        <div class="flex">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
-                                <i class="fa-solid fa-bolt"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-bold">Instant Engagement</h4>
-                                <p class="text-gray-600">Our AI engages the lead in under 59 seconds, 24/7.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
-                                <i class="fa-solid fa-filter"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-bold">Smart Qualification</h4>
-                                <p class="text-gray-600">It asks the right questions: What service? Postcode? Type of roof?</p>
-                            </div>
-                        </div>
-
-                        <div class="flex">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
-                                <i class="fa-solid fa-calendar-check"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-bold">Auto-Booking</h4>
-                                <p class="text-gray-600">It books them directly into your calendar for a quote or site visit.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-blue-900 text-white p-6 rounded-lg mt-8 border-l-4 border-orange-500">
-                        <p class="italic">"You stop being a slave to your inbox and start spending your time on what you're good at: quoting and closing jobs."</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="offer" class="py-20 bg-blue-600 text-white relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 20px 20px;"></div>
-        
-        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                Get Your FREE "AI-Powered Lead Engine" Installed <br>
-                <span class="text-blue-200 line-through text-2xl decoration-red-500 decoration-4">(Normally £1,500)</span>
-            </h2>
-            <p class="text-xl mb-10 max-w-2xl mx-auto">
-                This isn't a "demo". We are going to build and install this entire system in your business for 14 days, for free. No contracts, no catch.
-            </p>
-
-            <div class="bg-white text-slate-900 rounded-2xl shadow-2xl overflow-hidden max-w-3xl mx-auto transform hover:-translate-y-1 transition duration-300">
-                <div class="bg-slate-900 text-white py-4 px-6 text-center">
-                    <h3 class="text-xl font-bold uppercase tracking-wider">The "No-Brainer" Package</h3>
-                </div>
-                <div class="p-8 text-left">
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center justify-between border-b border-gray-100 pb-2">
-                            <span class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> 14-Day Free Trial of "Speed-to-Lead" AI System</span>
-                            <span class="font-bold text-gray-400">Value: £500</span>
-                        </li>
-                        <li class="flex items-center justify-between border-b border-gray-100 pb-2">
-                            <span class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> Full "AI Business Process Audit"</span>
-                            <span class="font-bold text-gray-400">Value: £750</span>
-                        </li>
-                        <li class="flex items-center justify-between border-b border-gray-100 pb-2">
-                            <span class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> Personalised "AI Implementation Roadmap"</span>
-                            <span class="font-bold text-gray-400">Value: £250</span>
-                        </li>
-                        <li class="flex items-center justify-between bg-yellow-50 p-2 rounded -mx-2">
-                            <span class="flex items-center font-bold text-slate-800"><i class="fa-solid fa-gift text-orange-500 mr-3"></i> BONUS PDF: "5 Estimating Mistakes Costing UK Roofers £50k/Year"</span>
-                            <span class="font-bold text-orange-600">Value: £97</span>
-                        </li>
-                    </ul>
-                    
-                    <div class="text-center pt-4">
-                        <p class="text-gray-500 text-sm uppercase mb-1">Total Value: <span class="line-through">£1,647</span></p>
-                        <p class="text-4xl font-extrabold text-blue-600 mb-6">Yours Today: FREE</p>
-                        
-                        <a href="https://cal.com/roger-malek/15min" target="_blank" class="block w-full bg-orange-500 hover:bg-orange-600 text-white font-bold text-xl py-4 rounded-lg shadow-lg transition duration-300 border-b-4 border-orange-700 active:border-b-0 active:translate-y-1">
-                            Claim My FREE 14-Day Trial & Audit
-                        </a>
-                        <p class="text-xs text-gray-400 mt-3"><i class="fa-solid fa-lock"></i> No Credit Card Required. Zero Obligation.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-slate-900">We'll Have You Generating AI-Powered Leads in 3 Simple Steps:</h2>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="relative p-6 border rounded-xl hover:shadow-lg transition bg-slate-50">
-                    <div class="w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold absolute -top-7 left-1/2 transform -translate-x-1/2 shadow-md">1</div>
-                    <h3 class="mt-8 text-xl font-bold mb-3">Book Your Free Audit</h3>
-                    <p class="text-gray-600">Click the button and pick a time. This 30-minute call lets us understand your process and fit.</p>
-                </div>
-
-                <div class="relative p-6 border rounded-xl hover:shadow-lg transition bg-slate-50">
-                    <div class="w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold absolute -top-7 left-1/2 transform -translate-x-1/2 shadow-md">2</div>
-                    <h3 class="mt-8 text-xl font-bold mb-3">We Install (In < 24 Hours)</h3>
-                    <p class="text-gray-600">We connect your lead sources (website, email) to the AI system. You don't have to do anything.</p>
-                </div>
-
-                <div class="relative p-6 border rounded-xl hover:shadow-lg transition bg-slate-50">
-                    <div class="w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold absolute -top-7 left-1/2 transform -translate-x-1/2 shadow-md">3</div>
-                    <h3 class="mt-8 text-xl font-bold mb-3">Watch Leads Turn into Jobs</h3>
-                    <p class="text-gray-600">Use it for 14 days. If you love it, keep it. If not, walk away with the Roadmap and PDF.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 bg-slate-50">
-        <div class="max-w-5xl mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center gap-10 mb-20">
-                <div class="w-full md:w-1/3">
-                    <img src="IMG_2053.JPEG" alt="Roger Malek - AI Specialist Manchester" class="rounded-lg shadow-xl w-full object-cover object-top h-80">
-                </div>
-                <div class="w-full md:w-2/3">
-                    <h2 class="text-3xl font-bold mb-4 text-slate-900">Meet Your "AI-in-a-Box" Specialist</h2>
-                    <p class="text-xl font-semibold text-blue-600 mb-4">Roger Malek, Manchester UK</p>
-                    <div class="prose text-gray-600">
-                        <p class="mb-4">"Hi, I'm Roger. I'm not a typical 'software salesman' – I'm an AI automation specialist. My passion is building AI workflows (using platforms like n8n) that give small businesses an unfair advantage over their slower, bigger competitors.</p>
-                        <p>I've seen too many great tradespeople (like you) get crushed by paperwork and disorganisation. I created RoofFlow AI to fix that, giving you the power of a 10-person sales team in one simple system."</p>
-                    </div>
-                </div>
-            </div>
-
-            <h3 class="text-2xl font-bold text-center mb-8">What UK Roofers Are Saying...</h3>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-white p-6 rounded-lg shadow border border-gray-100">
-                    <div class="flex text-yellow-400 mb-3">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 italic mb-4">"Honestly, RoofFlow AI changed everything. Before, we were constantly chasing our tails. Leads would come in, and by the time we got back to them, they'd already gone with someone else."</p>
-                    <p class="font-bold text-slate-900">- John, Director @ ABC Roofing (Manchester)</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow border border-gray-100">
-                    <div class="flex text-yellow-400 mb-3">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 italic mb-4">"We booked 3 extra site visits in the first 48 hours of turning this on. The fact that it replies at 9 PM while I'm at the pub is brilliant."</p>
-                    <p class="font-bold text-slate-900">- Mark, Owner @ Rapid Roofs (Leeds)</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 bg-slate-900 text-white text-center">
-        <div class="max-w-3xl mx-auto px-4">
-            <h2 class="text-3xl md:text-5xl font-bold mb-6">Stop Quoting at 9 PM. <br>Start Winning Jobs at 9 AM.</h2>
-            <p class="text-xl text-gray-300 mb-8">
-                The worst-case scenario? You walk away with a Free AI Roadmap worth £250 that shows you exactly how to automate your business. <br><strong>There is literally no risk.</strong>
-            </p>
-            
-            <a href="https://cal.com/roger-malek/15min" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold text-xl py-4 px-10 rounded-full shadow-lg transform transition hover:scale-105 duration-300 inline-block mb-4 border-b-4 border-green-700 active:border-b-0 active:translate-y-1">
-                [YES] I Want My Free AI Install & Roadmap!
-            </a>
-            <p class="text-sm text-gray-500">Limited availability for new installs this month.</p>
-        </div>
-    </section>
-
     <footer class="bg-black text-gray-400 py-12">
         <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-center md:text-left">
-            
             <div>
                 <h4 class="text-white font-bold text-lg mb-4">RoofFlow AI LTD</h4>
-                <p class="mb-2">Manchester</p>
-                <p class="mb-2">United Kingdom</p>
+                <p class="mb-2">Manchester, UK</p>
                 <div class="mt-4">
                      <a href="mailto:roger@roofflowai.co.uk" class="text-blue-400 hover:text-white transition block mb-1">roger@roofflowai.co.uk</a> 
                      <span class="block">+44 7305956949</span>
                 </div>
             </div>
-
             <div>
                 <h4 class="text-white font-bold text-lg mb-4">Links</h4>
                 <ul class="space-y-2">
@@ -320,11 +178,9 @@
                     <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
                 </ul>
             </div>
-
             <div>
-                <p class="text-sm mb-4">Designed specifically for UK Roofing Businesses to help automate lead generation and sales.</p>
+                <p class="text-sm mb-4">Designed specifically for UK Roofing Businesses.</p>
                 <p class="text-xs">&copy; <span id="year"></span> RoofFlow AI LTD. All Rights Reserved.</p>
-                <p class="text-xs mt-2">Registered in England & Wales.</p>
             </div>
         </div>
     </footer>
@@ -334,49 +190,19 @@
     </script>
 
     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-    <style>
-      :root {
-        --n8n-chat-primary-color: #f97316 !important;
-        --n8n-chat-primary-hover-color: #ea580c !important;
-        --n8n-chat-background-color: #ffffff !important;
-      }
-    
-      .n8n-chat-footer-branding {
-        display: none !important;
-      }
-    
-      .n8n-chat-header {
-        background-color: #f97316 !important;
-        color: white !important;
-      }
-    
-      .n8n-chat-window {
-        border-radius: 16px !important;
-        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1) !important;
-        border: 1px solid #e2e8f0 !important;
-        overflow: hidden !important;
-      }
-    
-      .n8n-chat-button {
-        background-color: #f97316 !important;
-        box-shadow: 0 4px 6px -1px rgba(249, 115, 22, 0.4) !important;
-      }
-    </style>
-    
     <script type="module">
       import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-    
       createChat({
         webhookUrl: 'https://primary-production-58a3.up.railway.app/webhook/3b8b4149-d04b-422e-8cca-01677ceeb9c4/chat',
         webhookConfig: {
           method: 'POST'
         },
         showWelcomeMsg: true,
-        welcomeMsg: 'Hi! How can we help automate your roofing business today?',
+        welcomeMsg: 'Hi',
         title: 'RoofFlow AI',
-        subtitle: 'Speed-to-Lead System',
-        mainColor: '#f97316',
-        backgroundColor: '#ffffff',
+        subtitle: 'Business Optimization',
+        mainColor: '#e74266',
+        backgroundColor: '#f2f4f8',
       });
     </script>
 
