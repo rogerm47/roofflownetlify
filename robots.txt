@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
 
-Wskazanie lokalizacji mapy witryny dla robotów Google
-
-Sitemap: https://www.google.com/search?q=https://www.roofflowai.co.uk/sitemap.xml
+Sitemap: https://www.roofflowai.co.uk/sitemap.xml
