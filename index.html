@@ -43,6 +43,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+
     <style>
         body { font-family: 'Inter', sans-serif; }
         .hero-bg {
@@ -51,6 +53,13 @@
             background-position: center;
         }
         .smooth-scroll { scroll-behavior: smooth; }
+
+        /* Custom Chat Styling override */
+        :root {
+            --n8n-chat-primary-color: #f97316 !important;
+            --n8n-chat-background-color: #ffffff !important;
+        }
+        .n8n-chat-footer-branding { display: none !important; }
     </style>
 </head>
 <body class="text-gray-800 antialiased smooth-scroll">
@@ -90,14 +99,14 @@
         </div>
     </header>
 
-    <section class="py-20 bg-white border-b border-gray-100">
+    <section class="py-20 bg-white">
         <div class="max-w-3xl mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-slate-900">
                 If You're Not The First Quote They Get, <span class="text-red-600">You've Already Lost.</span>
             </h2>
             <div class="prose prose-lg mx-auto text-gray-600">
-                <p class="mb-4">Let's be honest. The roofing business has changed. A lead that lands in your inbox is a "hot lead" for exactly 10 minutes. If you don't reply instantly, you're losing jobs to faster competitors.</p>
-                <p class="font-bold text-slate-900 text-xl border-t pt-4 mt-8">
+                <p class="mb-4 text-left text-lg leading-relaxed">The roofing business has changed. A lead that lands in your inbox is a "hot lead" for exactly 10 minutes. If you don't reply instantly, you're losing jobs to faster competitors.</p>
+                <p class="font-bold text-slate-900 text-xl border-t pt-4 mt-8 text-center">
                     You're not losing leads. They're being stolen by faster, more organised competitors.
                 </p>
             </div>
@@ -111,16 +120,16 @@
             <div class="bg-white text-slate-900 p-8 rounded-3xl shadow-2xl grid md:grid-cols-2 gap-12 items-center border-t-8 border-orange-500">
                 <div class="space-y-6 text-left">
                     <div>
-                        <label class="block text-sm font-bold mb-2 uppercase text-gray-500 text-left">Monthly Enquiries</label>
-                        <input type="number" id="calc-leads" value="20" class="w-full p-4 bg-slate-100 rounded-xl border-none focus:ring-2 focus:ring-orange-500 text-xl font-bold">
+                        <label class="block text-sm font-bold mb-2 uppercase text-gray-500">Monthly Enquiries</label>
+                        <input type="number" id="calc-leads" value="20" class="w-full p-4 bg-slate-100 rounded-xl border-none focus:ring-2 focus:ring-orange-500 text-xl font-bold outline-none">
                     </div>
                     <div>
-                        <label class="block text-sm font-bold mb-2 uppercase text-gray-500 text-left">Average Job Value (£)</label>
-                        <input type="number" id="calc-value" value="5000" class="w-full p-4 bg-slate-100 rounded-xl border-none focus:ring-2 focus:ring-orange-500 text-xl font-bold">
+                        <label class="block text-sm font-bold mb-2 uppercase text-gray-500">Average Job Value (£)</label>
+                        <input type="number" id="calc-value" value="5000" class="w-full p-4 bg-slate-100 rounded-xl border-none focus:ring-2 focus:ring-orange-500 text-xl font-bold outline-none">
                     </div>
                     <div>
-                        <label class="block text-sm font-bold mb-2 uppercase text-gray-500 text-left">Current Response Time</label>
-                        <select id="calc-time" class="w-full p-4 bg-slate-100 rounded-xl border-none focus:ring-2 focus:ring-orange-500 text-lg font-semibold">
+                        <label class="block text-sm font-bold mb-2 uppercase text-gray-500">Current Response Time</label>
+                        <select id="calc-time" class="w-full p-4 bg-slate-100 rounded-xl border-none focus:ring-2 focus:ring-orange-500 text-lg font-semibold outline-none">
                             <option value="0.05">Under 5 minutes (Best)</option>
                             <option value="0.15">10 - 30 minutes</option>
                             <option value="0.40" selected>Over 1 hour / Evening</option>
@@ -150,52 +159,17 @@
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full text-left">
                     <div class="flex text-yellow-400 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <p class="text-gray-600 italic mb-6 flex-grow">"Honestly, RoofFlow AI changed everything. Before, we were constantly chasing our tails."</p>
-                    <p class="font-bold text-slate-900 border-t pt-4 text-left">- John, Director @ ABC Roofing (Manchester)</p>
+                    <p class="font-bold text-slate-900 border-t pt-4">- John, ABC Roofing (Manchester)</p>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full text-left">
                     <div class="flex text-yellow-400 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <p class="text-gray-600 italic mb-6 flex-grow">"The fact that it replies at 9 PM while I'm at the pub is brilliant."</p>
-                    <p class="font-bold text-slate-900 border-t pt-4 text-left">- Mark, Owner @ Rapid Roofs (Leeds)</p>
+                    <p class="font-bold text-slate-900 border-t pt-4">- Mark, Owner @ Rapid Roofs (Leeds)</p>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full text-left">
                     <div class="flex text-yellow-400 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-gray-600 italic mb-6 flex-grow">"Our response time for full re-roofs dropped to under 60 seconds. Conversion jumped by 30%."</p>
-                    <p class="font-bold text-slate-900 border-t pt-4 text-left">- Dave, MD @ North West Slate & Tile (Stockport)</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full text-left">
-                    <div class="flex text-yellow-400 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-gray-600 italic mb-6 flex-grow">"Finally, a system that filters out the tyre-kickers. Saves me hours of wasted travel."</p>
-                    <p class="font-bold text-slate-900 border-t pt-4 text-left">- Steven, Owner @ Apex Roofing (Bristol)</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full text-left">
-                    <div class="flex text-yellow-400 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-gray-600 italic mb-6 flex-grow">"Acting like a professional secretary while I'm on a roof. Polite, fast, and knows the trade."</p>
-                    <p class="font-bold text-slate-900 border-t pt-4 text-left">- Paul, Director @ Premium Roofing (Birmingham)</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full text-left">
-                    <div class="flex text-yellow-400 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-gray-600 italic mb-6 flex-grow">"The Lead Leak Calculator was a wake-up call. Roger sorted automation in 24h. Paid for itself."</p>
-                    <p class="font-bold text-slate-900 border-t pt-4 text-left">- Gary, MD @ Heritage Roof Care (Sheffield)</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full text-left">
-                    <div class="flex text-yellow-400 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-gray-600 italic mb-6 flex-grow">"No more answering leads during family dinner. AI handles the Speed-to-Lead part."</p>
-                    <p class="font-bold text-slate-900 border-t pt-4 text-left">- Mike, Owner @ Liverpool Leadworks (Liverpool)</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full text-left">
-                    <div class="flex text-yellow-400 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-gray-600 italic mb-6 flex-grow">"Consistently the first quote customers receive. In this business, that means we win."</p>
-                    <p class="font-bold text-slate-900 border-t pt-4 text-left">- Chris, Director @ Skyline Roofing (London)</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full text-left">
-                    <div class="flex text-yellow-400 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-gray-600 italic mb-6 flex-grow">"The n8n automation is flawless. Connects website and calendar perfectly. Recommended."</p>
-                    <p class="font-bold text-slate-900 border-t pt-4 text-left">- Alan, Owner @ AA Roofing (Newcastle)</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full text-left">
-                    <div class="flex text-yellow-400 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-gray-600 italic mb-6 flex-grow">"14-day trial was a no-brainer. AI booked two massive jobs in the first week."</p>
-                    <p class="font-bold text-slate-900 border-t pt-4 text-left">- Lee, MD @ Coastal Roofing (Cardiff)</p>
+                    <p class="text-gray-600 italic mb-6 flex-grow">"Response time under 60s is the game changer. We win more jobs because we're first."</p>
+                    <p class="font-bold text-slate-900 border-t pt-4">- Dave, MD @ North West Tile</p>
                 </div>
             </div>
         </div>
@@ -205,24 +179,16 @@
         <div class="max-w-3xl mx-auto px-4">
             <div class="text-center mb-16">
                 <span class="text-orange-600 font-bold uppercase tracking-wide">Common Concerns</span>
-                <h2 class="text-3xl md:text-5xl font-bold mt-2 text-slate-900">Frequently Asked Questions</h2>
+                <h2 class="text-3xl md:text-5xl font-bold mt-2 text-slate-900 text-center">Frequently Asked Questions</h2>
             </div>
             <div class="space-y-6">
-                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100">
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 text-left">
                     <h4 class="font-bold text-lg mb-2">How long does setup take?</h4>
-                    <p class="text-gray-600">We handle everything. Your system will be live and responding to leads in under 24 hours.</p>
+                    <p class="text-gray-600">Your system will be live and responding to leads in under 24 hours.</p>
                 </div>
-                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100">
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 text-left">
                     <h4 class="font-bold text-lg mb-2">Is my calendar secure?</h4>
-                    <p class="text-gray-600">Yes. We use secure, encrypted sync with Google or Outlook. The AI only sees your availability, never your personal details.</p>
-                </div>
-                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100">
-                    <h4 class="font-bold text-lg mb-2">Do I need to be tech-savvy?</h4>
-                    <p class="text-gray-600">Not at all. This is a "Done-For-You" service. We build, install, and maintain the automation while you focus on roofing.</p>
-                </div>
-                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100">
-                    <h4 class="font-bold text-lg mb-2">What happens after the 14-day trial?</h4>
-                    <p class="text-gray-600">If you love the results, we keep it running. If not, we turn it off and you walk away with your free AI Audit report—no charge.</p>
+                    <p class="text-gray-600">Yes. The AI only sees your availability, never your personal details.</p>
                 </div>
             </div>
         </div>
@@ -230,9 +196,9 @@
 
     <section class="py-20 bg-slate-100" id="lead-form">
         <div class="max-w-xl mx-auto px-4">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold text-slate-900 text-center">Get Your Free AI Audit</h2>
-                <p class="text-gray-600 mt-2 text-center">Enter your details and we'll show you how to stop leaking leads.</p>
+            <div class="text-center mb-10 text-center">
+                <h2 class="text-3xl font-bold text-slate-900 mx-auto">Get Your Free AI Audit</h2>
+                <p class="text-gray-600 mt-2 mx-auto">Enter your details and we'll show you how to stop leaking leads.</p>
             </div>
             <div class="bg-white p-8 rounded-2xl shadow-lg">
                 <form id="infoRequestForm" class="space-y-5">
@@ -246,9 +212,9 @@
                     </div>
                     <button type="submit" id="submitButton" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-lg shadow-lg transition duration-200">Request More Info</button>
                 </form>
-                <div id="successMessage" class="hidden text-center p-6 bg-green-100 text-green-700 rounded-xl font-bold text-center">
+                <div id="successMessage" class="hidden text-center p-6 bg-green-100 text-green-700 rounded-xl font-bold">
                     <i class="fa-solid fa-circle-check text-2xl mb-2 block text-center mx-auto"></i>
-                    Thank you! We've received your details and will be in touch shortly.
+                    Thank you! We've received your details.
                 </div>
             </div>
         </div>
@@ -256,16 +222,15 @@
 
     <footer class="bg-black text-gray-400 py-12">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h4 class="text-white font-bold text-lg mb-4">RoofFlow AI LTD</h4>
-            <p class="mb-4">Manchester, United Kingdom | +44 7305956949</p>
-            <p class="text-xs">&copy; <span id="year"></span> RoofFlow AI LTD. All Rights Reserved.</p>
+            <h4 class="text-white font-bold text-lg mb-4 text-center mx-auto">RoofFlow AI LTD</h4>
+            <p class="text-xs text-center mx-auto">&copy; <span id="year"></span> RoofFlow AI LTD. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Calculator Logic
+        // Calculator
         const leadsIn = document.getElementById('calc-leads');
         const valueIn = document.getElementById('calc-value');
         const timeIn = document.getElementById('calc-time');
@@ -277,7 +242,7 @@
         }
         [leadsIn, valueIn, timeIn].forEach(i => i.addEventListener('input', updateCalc));
 
-        // AJAX Form Submission
+        // AJAX Form
         const form = document.getElementById('infoRequestForm');
         const success = document.getElementById('successMessage');
         const btn = document.getElementById('submitButton');
@@ -287,16 +252,14 @@
             btn.disabled = true;
             btn.innerText = 'Sending...';
 
-            const payload = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                estimated_loss: leakOut.innerText
-            };
-
             fetch('https://primary-production-58a3.up.railway.app/webhook/8c1172f6-7bb0-4a5d-91e9-2bae3dd8f02f', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
+                body: JSON.stringify({
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    estimated_loss: leakOut.innerText
+                })
             })
             .then(res => {
                 if(res.ok) {
@@ -305,7 +268,7 @@
                 }
             })
             .catch(() => {
-                alert('Error sending form. Please try again.');
+                alert('Error. Try again.');
                 btn.disabled = false;
                 btn.innerText = 'Request More Info';
             });
@@ -314,13 +277,19 @@
 
     <script type="module">
       import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+      
       createChat({
         webhookUrl: 'https://primary-production-58a3.up.railway.app/webhook/3b8b4149-d04b-422e-8cca-01677ceeb9c4/chat',
+        webhookConfig: {
+          method: 'POST'
+        },
         showWelcomeMsg: true,
         welcomeMsg: 'Hi',
         title: 'RoofFlow AI',
         mainColor: '#f97316',
+        backgroundColor: '#ffffff'
       });
     </script>
+
 </body>
 </html>
